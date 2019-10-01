@@ -1,0 +1,3 @@
+rootProject.name = 'break-palantir-gradle-baseline'
+
+include ':sub-module'
