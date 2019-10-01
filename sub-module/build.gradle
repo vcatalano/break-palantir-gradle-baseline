@@ -1,5 +1,5 @@
 plugins {
-    id 'com.palantir.sls-java-service-distribution'
+//    id 'com.palantir.sls-java-service-distribution'
     id 'com.palantir.docker' version '0.22.1'
     id 'com.palantir.docker-run' version '0.22.1'
     id 'com.palantir.docker-compose' version '0.22.1'
@@ -8,7 +8,7 @@ plugins {
 apply plugin: 'com.palantir.docker'
 apply plugin: 'com.palantir.docker-run'
 apply plugin: 'com.palantir.docker-compose'
-apply plugin: 'com.palantir.sls-java-service-distribution'
+//apply plugin: 'com.palantir.sls-java-service-distribution'
 
 sourceCompatibility = '1.11'
 targetCompatibility = '1.11'
@@ -17,7 +17,7 @@ version = rootProject.version
 group = rootProject.group
 
 dependencies {
-    
+
 }
 
 test {

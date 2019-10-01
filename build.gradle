@@ -7,9 +7,6 @@ buildscript {
         classpath 'com.amazonaws:aws-java-sdk-core:1.11.400'
         classpath 'com.amazonaws:aws-java-sdk-sts:1.11.400'
         classpath 'com.palantir.baseline:gradle-baseline-java:2.15.0'
-//        classpath 'gradle.plugin.org.inferred:gradle-processors:3.1.0'
-//        classpath 'gradle.plugin.org.inferred:gradle-processors:2.1.0'
-        classpath 'com.palantir.sls-packaging:gradle-sls-packaging:4.2.0'
     }
 }
 
@@ -24,9 +21,9 @@ apply plugin: 'org.inferred.processors'
 apply plugin: 'com.palantir.baseline'
 apply plugin: 'com.palantir.git-version'
 
-group = 'com.neuro.portal'
+group = 'com.neuro.break.palantir'
 version = version = gitVersion()
-description = 'Neuro-ID Curtomer Portal'
+description = 'Break palantir-gradle-baseline plugin on Windows'
 
 allprojects {
     apply plugin: 'java'
@@ -37,21 +34,4 @@ allprojects {
         mavenCentral()
         maven { url  "http://palantir.bintray.com/releases" }
     }
-}
-
-configure(subprojects - project(':customer-portal-web')) {
-    apply plugin: 'java'
-    apply plugin: 'java-library'
-    apply plugin: 'org.inferred.processors'
-
-    sourceCompatibility = '1.11'
-    targetCompatibility = '1.11'
-
-    apply plugin: 'com.palantir.configuration-resolver'
-    task allDeps(type: DependencyReportTask) {}
-
-    // Temporarily disabled for now since we have a bunch of errors...
-//    tasks.withType(JavaCompile) {
-//        options.compilerArgs += ['-Werror']
-//    }
 }
